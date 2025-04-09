@@ -22,6 +22,10 @@ const getAllUsers = () =>{
     return rows;
 }
 
+const getOneUser = () =>{
+    const stmt = db.prepare('SELECT * FROM usuarios WHERE nombre');
+}
+
 const addUser = (nombre, pass) =>{
     const stmt = db.prepare('INSERT INTO usuarios (nombre, pass) VALUES (?, ?)');
     const info = stmt.run(nombre, pass);
