@@ -166,3 +166,24 @@ app.listen(3000, () => {
 
 console.log(getAllUsers())
 ```
+
+## Creamos una carpeta public y hacemos un index.html
+```html
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+ </head>
+ <body>
+    hola mundo
+    <div 
+    hx-get="/users" 
+    hx-swap="innerHTML" 
+    hx-trigger="load">
+    </div>
+ </body>
+ </html>
+ ```
