@@ -187,3 +187,27 @@ console.log(getAllUsers())
  </body>
  </html>
  ```
+
+# Seguridad
+Metemos en el users.js:
+
+```javascript
+    function escapeHtmlText (value) {
+        const stringValue = value.toString()
+        const entityMap = {
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#x27;',
+            '/': '&#x2F;',
+            '`': '&grave;',
+            '=': '&#x3D;'
+        }
+        const regex = /[&<>"'`=/]/g
+        return stringValue.replace(regex, match => entityMap[match])
+    }
+´´´
+
+ # Exadecimales
+Números del 0-9 y letras de A-F.
